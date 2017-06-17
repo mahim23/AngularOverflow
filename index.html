@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AngularOverflow</title>
+
+    <script src="angular/libraries/angular.min.js"></script>
+    <script src="angular/libraries/ui-router.js"></script>
+    <script src="angular/libraries/aes.js"></script>
+    <script src="angular/main.js"></script>
+    <script src="angular/services/authStorageAccess.js"></script>
+
+    <script src="bootstrap/js/jq.js"></script>
+    
+    <script src="angular/controllers/loginController.js"></script>
+    <script src="angular/controllers/signupController.js"></script>
+    <script src="angular/controllers/logoutController.js"></script>
+    <script src="angular/controllers/usersController.js"></script>
+    <script src="angular/controllers/userController.js"></script>
+    <script src="angular/controllers/postsController.js"></script>
+    <script src="angular/controllers/postController.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/footer.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/awesome-bootstrap-checkbox.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap/css/font-awesome.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <link href="main.css" rel="stylesheet">
+</head>
+<body data-ng-app="myApp">
+<nav class="navbar navbar-default navbar-fixed-top container-header">
+    <div class="container">
+
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+
+            <a class="navbar-brand" href="#" style="color: rgba(255,255,255,0.75); font-size: x-large; display: flex">
+                <img src="angular-logo-white.png" alt="app-logo" class="logo">
+                <span >ngularOverflow</span>
+            </a>
+
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right" ng-init="loginobj = { 'loggedIn': false}">
+                <li>
+                    <a ui-sref="login" ng-show="!loginobj.loggedIn">Log In</a>
+                </li>
+                <li>
+                    <a ui-sref="signup" ng-show="!loginobj.loggedIn">Sign Up</a>
+                </li>
+                <li>
+                    <a ui-sref="logout" ng-show="loginobj.loggedIn">Log Out</a>
+                </li>
+                <li>
+                    <a ui-sref="users">Users</a>
+                </li>
+                <li>
+                    <a ui-sref="posts">Posts</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="jumbotron" style="background: white; height: 100%" ui-view>
+
+</div>
+
+<div id="snackbar">Please Log In to access the content</div>
+
+</body>
+</html>

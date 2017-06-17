@@ -1,0 +1,16 @@
+<div class="container container-table">
+    <table >
+        <h2 style="padding: 3%">Users</h2>
+            <tr ng-repeat="x in usersData" class="tr" ui-sref="users.show({ id: '{{x.username}}'})">
+                <td>
+                    <div>
+                        <div class="card">
+                            <h4><strong>{{x.name}}</strong>  <small>@{{x.username}}</small></h4>
+                        </div>
+                        <div class="user-details" ui-view>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+    </table>
+</div>
