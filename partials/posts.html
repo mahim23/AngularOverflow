@@ -1,0 +1,28 @@
+<div class="container container-table">
+    <div class="head-div">
+        <h2 style="padding: 3%" >
+            Posts
+
+
+        </h2>
+        <h2 class="new-post-btn text-right">
+            <button class="btn btn-primary" ng-click="newPost()">New Post</button>
+        </h2>
+
+    </div>
+
+    <table>
+        <tr class="trt" ng-show="newPostShow">
+            <td ui-view>
+
+            </td>
+        </tr>
+        <tr ng-repeat="x in posts" class="tr" ui-sref="post({ id: '{{x._id}}' })">
+            <td>
+                <div class="card">
+                    <h4><strong>{{x.title}}</strong></h4>
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>

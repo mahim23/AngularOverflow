@@ -1,6 +1,7 @@
-var signupController = function ($scope, $http, $state) {
+var signupController = function ($scope, $http, $state, authStorageAccess) {
     $scope.dupUsername = false;
     $scope.unableSignup = false;
+    $scope.loginobj.loggedIn = authStorageAccess.getData("loginobj").loggedIn;
 
     var login = function(){
         var loginData = {
@@ -13,10 +14,10 @@ var signupController = function ($scope, $http, $state) {
             data: loginData
         }).then(
             function successCallback(response) {
-                $scope.loginobj.link = "logout";
-                $scope.loginobj.text = "Log Out";
-                loggedIn = true;
-                $state.go('home');
+                $scope.loginobj.loggedIn = true;
+                $scope.loginobj.name = $scope.username;
+                authStorageAccess.setData("loginobj", $scope.loginobj);
+                $state.go('posts');
             }
         );
     };

@@ -1,17 +1,17 @@
 function authStorageAccess() {
     /*
      * setData converts the given data into json string,
-     * and stores in the localStorage with the key.
+     * and stores in the sessionStorage with the key.
      */
     
     this.setData = function(key, value) {
         if (typeof(Storage) !== "undefined") {
         	var str = '';
             if(value.length === 0)
-                localStorage.removeItem(key);
+                sessionStorage.removeItem(key);
     		else{
                 str = JSON.stringify(value);
-                localStorage.setItem(key, str);
+                sessionStorage.setItem(key, str);
             }
         }
     };
@@ -20,7 +20,7 @@ function authStorageAccess() {
      */
     this.getData = function(key) {
         if (typeof(Storage) !== "undefined") {
-        	var str = localStorage.getItem(key);
+        	var str = sessionStorage.getItem(key);
         	if(str){
 	        	return JSON.parse(str);
         	}

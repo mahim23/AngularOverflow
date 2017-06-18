@@ -1,5 +1,6 @@
-var loginController = function($scope, $stateParams, $state, $rootScope, $http){
+var loginController = function($scope, $stateParams, $state, $rootScope, $http, authStorageAccess){
     $scope.invalidLogin = false;
+    $scope.loginobj.loggedIn = authStorageAccess.getData("loginobj").loggedIn;
     
     $scope.loginButton = function(){
         var loginData = {
@@ -22,6 +23,8 @@ var loginController = function($scope, $stateParams, $state, $rootScope, $http){
                 }
                 else {
                     $scope.loginobj.loggedIn = true;
+                    $scope.loginobj.name = $scope.username;
+                    authStorageAccess.setData("loginobj", $scope.loginobj);
                     $state.go('home');
                 }
             }

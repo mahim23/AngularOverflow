@@ -31,6 +31,11 @@
     align-items: center;
 }
 
+#profile-tag {
+    color: rgba(255,255,255,0.75);
+    cursor: auto;
+}
+
  html, body, .container-table {
     height: 100%;
 }
@@ -77,13 +82,35 @@ table {
     border-bottom: 1px solid #c4c4c4;
 }
 
-.user-details {
-    transition: 0.5s;
+.user-details{
+    transition: all linear 1s;
+    max-height: 1000px;
+    list-style-type: none;
+}
+
+.user-details.ng-hide {
+    max-height: 0;
+}
+
+.head-div {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.new-post-btn {
+    width: 100%;
 }
 
 .tr:hover {
     /*box-shadow: 2px 4px 8px 4px rgba(0,0,0,0.2);*/
     transform: scale(1.02, 1.02);
+}
+
+.trt {
+    padding: 2%;
+    border-top: 1px solid #c4c4c4;
+    border-bottom: 1px solid #c4c4c4;
 }
 
 #snackbar {

@@ -1,0 +1,17 @@
+<div class="container container-table">
+    <h2 style="padding: 3%">{{postData.title}}</h2>
+    <table ng-show="showPost">
+        <tr class="tr">
+            <td ng-click="userInfo()">
+                <div class="card">
+                    <h5>Author:&nbsp;<strong>{{authorData.name}}&nbsp;</strong><small>&nbsp;@{{authorData.username}}</small></h5>
+                </div>
+            </td>
+        </tr>
+        <tr class="trt">
+            <td class="card">
+                <h4>Content: {{postData.content}}</h4>
+            </td>
+        </tr>
+    </table>
+</div>
